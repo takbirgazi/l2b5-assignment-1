@@ -1,4 +1,4 @@
-// Problem 1 
+
 function formatString(input: string, toUpper?: boolean): string {
     if (toUpper === true || toUpper === undefined) {
         return input.toLocaleUpperCase();
@@ -6,11 +6,10 @@ function formatString(input: string, toUpper?: boolean): string {
         return input.toLocaleLowerCase();
     }
 }
+const textTransformation = formatString("Hello", false);
+console.log(textTransformation);
 
-const myText = formatString("Hello", false);
-// console.log(myText);
 
-// Problem 2
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
     return items.filter(item => item.rating >= 4)
 }
@@ -19,20 +18,19 @@ const books = [
     { title: "Book B", rating: 3.2 },
     { title: "Book C", rating: 5.0 }
 ];
+const mostRatingBooks = filterByRating(books);
+console.log(mostRatingBooks);
 
-const myBook = filterByRating(books);
-// console.log(myBook);
 
-// Problem 3
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     const firstArray = new Array();
     const newArray = firstArray.concat(...arrays);
     return newArray;
 }
-const myArray = concatenateArrays<string>(["a", "b"], ["c"]);
-// console.log(myArray);
+const singleArrayFromMultipleArray = concatenateArrays<string>(["a", "b"], ["c"]);
+console.log(singleArrayFromMultipleArray);
 
-// Problem 4
+
 class Vehicle {
     private make: string;
     private year: number;
@@ -58,10 +56,10 @@ class Car extends Vehicle {
 }
 
 const myCar = new Car("Toyota", 2020, "Corolla");
-// console.log(myCar.getInfo());
-// console.log(myCar.getModel());
+console.log(myCar.getInfo());
+console.log(myCar.getModel());
 
-// Problem 5
+
 function processValue(value: string | number): number {
     if (typeof value === "number") {
         return value * 2;
@@ -70,10 +68,10 @@ function processValue(value: string | number): number {
     }
 }
 
-const myNumber = processValue("hello");
-// console.log(myNumber);
+const changeInputToNumber = processValue("hello");
+console.log(changeInputToNumber);
 
-// Problem 6
+
 interface Product {
     name: string;
     price: number;
@@ -92,10 +90,10 @@ const products = [
     { name: "Bag", price: 50 }
 ];
 
-const myProduct = getMostExpensiveProduct(products);
-// console.log(myProduct);
+const highCostProduct = getMostExpensiveProduct(products);
+console.log(highCostProduct);
 
-// Problem 7
+
 enum Day {
     Monday,
     Tuesday,
@@ -114,10 +112,10 @@ function getDayType(day: Day): string {
     }
 }
 
-const myDay = getDayType(Day.Monday)
-// console.log(myDay);
+const getWeekend = getDayType(Day.Monday)
+console.log(getWeekend);
 
-// Problem 8
+
 async function squareAsync(n: number): Promise<number> {
     if (n < 0) {
         throw Error('Negative number not allowed');
@@ -130,5 +128,5 @@ async function squareAsync(n: number): Promise<number> {
     }
 }
 
-// squareAsync(4).then(console.log);
-// squareAsync(-3).catch(console.error);
+squareAsync(4).then(console.log);
+squareAsync(-3).catch(console.error);
